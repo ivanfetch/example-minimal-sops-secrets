@@ -10,6 +10,13 @@ references:
         echo 'export CI_BUILD_NUM=$CIRCLE_BUILD_NUM' >> ${BASH_ENV}
         echo 'export CI_TAG=$CIRCLE_TAG' >> ${BASH_ENV}
         echo 'export ROK8S_INSTALL_PATH=${HOME}' >> ${BASH_ENV}
+        echo 'export GOOGLE_APPLICATION_CREDENTIALS=/tmp/gloud_key.json' >> ${BASH_ENV}
+        echo 'export GCP_REGION=us-central1' >> ${BASH_ENV}
+        echo 'export CLUSTER_NAME=ifetch-1' >> ${BASH_ENV}
+        echo 'export GCP_REGIONAL_CLUSTER=true' >> ${BASH_ENV}
+        echo 'export GCP_PROJECT=reactiveopsio' >> ${BASH_ENV}
+        echo 'export GCLOUD_KEY=$GCLOUD_KEY' >> ${BASH_ENV}
+        prepare-gcloud
 
   build_image: &build_image
     run:
